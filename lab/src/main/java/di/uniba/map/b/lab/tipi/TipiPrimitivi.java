@@ -26,23 +26,25 @@ public class TipiPrimitivi {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int a=0;
+        int a = 0;
         System.out.println(a);
-        int c=2,b=3;
+        int c = 2, b = 3;
         System.out.println(b);
         System.out.println(c);
-        long l=5543;
+        long l = 5543;
         System.out.println(l);
-        l=948934298374928743l;
+        l = 948934298374928743l;
         System.out.println(l);
-        long ll=c;
+        long ll = c;
         System.out.println(ll);
-        float f=0.4f;
+        float f = 0.4f;
         System.out.println(f);
-        double d=0.4;
+        double d = 0.4;
         System.out.println(d);
-        char c1='a';
+        char c1 = 'a';
         System.out.println(c1);
+        char c2 = '\u0065';
+        System.out.println(c2);
     }
-    
+
 }
