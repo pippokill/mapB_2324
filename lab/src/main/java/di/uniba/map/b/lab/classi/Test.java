@@ -34,6 +34,7 @@ public class Test {
         PersonStatic p1 = new PersonStatic("Marco", "Rossi");
         PersonStatic p2 = new PersonStatic("Francesca", "Bianchi");
         System.out.println(PersonStatic.numbOfPersons);
+        System.out.println(p1);
         Day d1=Day.MONDAY;
         Planet p=Planet.MARS;
         System.out.println(p.mass());

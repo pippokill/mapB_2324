@@ -36,4 +36,8 @@ public class PersonStatic {
         this.surname = surname;
         ++numbOfPersons;
     }
+    
+    public String toString() {
+        return name+" "+surname;
+    }
 }

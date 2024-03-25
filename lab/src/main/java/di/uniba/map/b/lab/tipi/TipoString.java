@@ -36,6 +36,8 @@ public class TipoString {
         System.out.println(s);
         String s1=s+" nuova stringa";
         System.out.println(s1);
+        String b=new String("pippo");
+        System.out.println(b);
     }
     
 }

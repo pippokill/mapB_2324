@@ -50,6 +50,7 @@ public abstract class FiguraComp implements Figura, Comparable {
     public boolean equals(Object o) {
         if (o instanceof Figura) {
             return (((Figura) o).area() == this.area());
+            //return compareTo(o)==0;
         } else {
             return false;
         }

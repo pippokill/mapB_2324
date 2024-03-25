@@ -26,7 +26,7 @@ public class EsempioSwitch {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int month = 15;
+        int month = 11;
         String monthString;
         switch (month) {
             case 1:
