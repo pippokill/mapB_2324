@@ -38,6 +38,7 @@ public class MacherExample {
         Matcher matcher2 = pattern.matcher("dlkflsASDaslsdSD 8798767");
         //la corrispondenza deve partire dall'inizio ma non è necessario che corrisponda l'intera stringa
         System.out.println(matcher2.lookingAt());
+        System.out.println(matcher2.matches());
         System.out.println("=== Es. FIND ===");
         Matcher matcher3 = pattern.matcher("34543 345   dlkflsASDaslsdSD ksdjfkdsEEGRT lfkgsDdsfds 4654654");
         while (matcher3.find()) {
