@@ -14,24 +14,26 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b.lab.eccezioni;
+package di.uniba.map.b.lab.generics;
 
 /**
  *
  * @author pierpaolo
  */
-public class TestException {
+public class BoundedClassReference {
 
     /**
      *
      * @param args
      */
     public static void main(String[] args) {
-        try {
-            MailParser.checkMail("pippo.m");
-            System.out.println("Indirizzo mail valido");
-        } catch (EmailException ex) {
-            System.err.println("Errore nel controllo dell'indirizzo: " + ex.getMessage());
-        }
+        Class<? extends Number> bounded = int.class;
+        bounded = double.class;
+        bounded = Number.class;
+        
+        Holder3<String> h1=new Holder3<>("pippo");
+        Holder3<?> h2=new Holder3<>(43);
+        h2=new Holder3<>("sdklfjldsk");
+        Holder3<? extends Number> h3=new Holder3<>(3);
     }
 }

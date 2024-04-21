@@ -14,24 +14,43 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b.lab.eccezioni;
+package di.uniba.map.b.lab.generics;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author pierpaolo
  */
-public class TestException {
+public class GenericVarargs {
+
+    /**
+     *
+     * @param <T>
+     * @param args
+     * @return
+     */
+    public static <T> List<T> makeList(T... args) {
+        List<T> result = new ArrayList<>();
+        for (T item : args) {
+            result.add(item);
+        }
+        return result;
+    }
 
     /**
      *
      * @param args
      */
     public static void main(String[] args) {
-        try {
-            MailParser.checkMail("pippo.m");
-            System.out.println("Indirizzo mail valido");
-        } catch (EmailException ex) {
-            System.err.println("Errore nel controllo dell'indirizzo: " + ex.getMessage());
-        }
+        List<String> ls = makeList("A");
+        System.out.println(ls);
+        ls = makeList("A", "B", "C");
+        System.out.println(ls);
+        ls = makeList("ABCDEFFHIJKLMNOPQRSTUVWXYZ".split(""));
+        System.out.println(ls);
+        List<Integer> li = makeList(1, 4, 32);
+        System.out.println(li);
     }
 }

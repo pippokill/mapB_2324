@@ -14,24 +14,41 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b.lab.eccezioni;
+package di.uniba.map.b.lab.generics;
 
 /**
  *
  * @author pierpaolo
+ * @param <A>
+ * @param <B>
  */
-public class TestException {
+public class TwoTuple<A, B> {
 
     /**
      *
-     * @param args
      */
-    public static void main(String[] args) {
-        try {
-            MailParser.checkMail("pippo.m");
-            System.out.println("Indirizzo mail valido");
-        } catch (EmailException ex) {
-            System.err.println("Errore nel controllo dell'indirizzo: " + ex.getMessage());
-        }
+    public final A first;
+
+    /**
+     *
+     */
+    public final B second;
+
+    /**
+     *
+     * @param a
+     * @param b
+     */
+    public TwoTuple(A a, B b) {
+        first = a;
+        second = b;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String toString() {
+        return "(" + first + ", " + second + ")";
     }
 }

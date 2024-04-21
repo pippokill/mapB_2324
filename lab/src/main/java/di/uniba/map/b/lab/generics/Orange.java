@@ -14,24 +14,20 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b.lab.eccezioni;
+package di.uniba.map.b.lab.generics;
 
 /**
  *
  * @author pierpaolo
  */
-public class TestException {
-
+public class Orange extends Fruit {
+    
     /**
      *
-     * @param args
+     * @return
      */
-    public static void main(String[] args) {
-        try {
-            MailParser.checkMail("pippo.m");
-            System.out.println("Indirizzo mail valido");
-        } catch (EmailException ex) {
-            System.err.println("Errore nel controllo dell'indirizzo: " + ex.getMessage());
-        }
+    public String toString() {
+        return "Orange";
     }
+    
 }

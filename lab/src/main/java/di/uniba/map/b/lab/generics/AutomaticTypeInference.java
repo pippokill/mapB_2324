@@ -14,24 +14,26 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b.lab.eccezioni;
+package di.uniba.map.b.lab.generics;
+
+import java.util.List;
 
 /**
  *
  * @author pierpaolo
  */
-public class TestException {
+public class AutomaticTypeInference {
+
+    static void f(List<String> list) {
+    }
 
     /**
      *
      * @param args
      */
     public static void main(String[] args) {
-        try {
-            MailParser.checkMail("pippo.m");
-            System.out.println("Indirizzo mail valido");
-        } catch (EmailException ex) {
-            System.err.println("Errore nel controllo dell'indirizzo: " + ex.getMessage());
-        }
+        //Inferenza automatica del tipo https://docs.oracle.com/javase/tutorial/java/generics/genTypeInference.html
+        f(New.list()); 
+        f(New.<String>list());
     }
 }

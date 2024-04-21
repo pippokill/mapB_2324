@@ -14,24 +14,35 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b.lab.eccezioni;
+package di.uniba.map.b.lab.generics;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author pierpaolo
  */
-public class TestException {
+public class SuperTypeWildcards {
+
+    static void writeTo(List<? super Apple> apples) {
+        apples.add(new Apple());
+        apples.add(new Jonathan());
+        //apples.add(new Orange()); // Orange doesn’t extend Apple
+        //apples.add(new Fruit()); // Fruit doesn’t extend Apple
+    }
 
     /**
      *
      * @param args
      */
     public static void main(String[] args) {
-        try {
-            MailParser.checkMail("pippo.m");
-            System.out.println("Indirizzo mail valido");
-        } catch (EmailException ex) {
-            System.err.println("Errore nel controllo dell'indirizzo: " + ex.getMessage());
+        List<Apple> l = new ArrayList<>();
+        //List<Fruit> l=new ArrayList<>();
+        writeTo(l);
+        for (Object o : l) {
+            System.out.println(o.getClass().getName());
         }
     }
+
 }

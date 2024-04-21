@@ -14,24 +14,35 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b.lab.eccezioni;
+package di.uniba.map.b.lab.generics;
 
 /**
  *
  * @author pierpaolo
  */
-public class TestException {
+public class CovariantArrays {
 
     /**
      *
      * @param args
      */
     public static void main(String[] args) {
+        Fruit[] fruit = new Apple[10];
+        fruit[0] = new Apple(); // OK
+        fruit[1] = new Jonathan(); // OK
+        // Runtime type is Apple[], not Fruit[] or Orange[]
         try {
-            MailParser.checkMail("pippo.m");
-            System.out.println("Indirizzo mail valido");
-        } catch (EmailException ex) {
-            System.err.println("Errore nel controllo dell'indirizzo: " + ex.getMessage());
+            // Compiler allows you to add Fruit:
+            fruit[0] = new Fruit(); // ArrayStoreException
+            //errore a run-time, ma non a compile-time
+        } catch (Exception e) {
+            System.err.println("ERROR: "+e);
+        }
+        try {
+            // Compiler allows you to add Oranges:
+            fruit[0] = new Orange(); // ArrayStoreException
+        } catch (Exception e) {
+            System.err.println("ERROR: "+e);
         }
     }
 }

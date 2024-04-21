@@ -14,24 +14,31 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b.lab.eccezioni;
+package di.uniba.map.b.lab.generics;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author pierpaolo
  */
-public class TestException {
+public class GenericsAndCovariance {
 
     /**
      *
      * @param args
      */
     public static void main(String[] args) {
-        try {
-            MailParser.checkMail("pippo.m");
-            System.out.println("Indirizzo mail valido");
-        } catch (EmailException ex) {
-            System.err.println("Errore nel controllo dell'indirizzo: " + ex.getMessage());
-        }
+        // Wildcards allow covariance:
+        List<? extends Fruit> flist = new ArrayList<Apple>();
+        // Compile Error: can't add any type of object:
+        //flist.add(new Apple());
+        //flist.add(new Fruit());
+        //flist.add(new Object());
+        flist.add(null); // Legal but uninteresting
+        // We know that it returns at least Fruit:
+        Fruit f = flist.get(0);
+        System.out.println(f);
     }
 }

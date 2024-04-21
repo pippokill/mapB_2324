@@ -49,10 +49,12 @@ public class LoadInvoice {
                 total += unit * price;
             }
         } catch (IOException e) {
+            System.err.println("IO Error: " + e.toString());
         } finally {
+            in.close();
             System.out.println(total);
         }
-        
+
     }
 
 }

@@ -14,24 +14,39 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b.lab.eccezioni;
+package di.uniba.map.b.lab.generics;
 
 /**
  *
  * @author pierpaolo
+ * @param <T>
  */
-public class TestException {
+public class Holder3<T> {
+
+    private T a;
 
     /**
      *
-     * @param args
+     * @param a
      */
-    public static void main(String[] args) {
-        try {
-            MailParser.checkMail("pippo.m");
-            System.out.println("Indirizzo mail valido");
-        } catch (EmailException ex) {
-            System.err.println("Errore nel controllo dell'indirizzo: " + ex.getMessage());
-        }
+    public Holder3(T a) {
+        this.a = a;
     }
+
+    /**
+     *
+     * @param a
+     */
+    public void set(T a) {
+        this.a = a;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public T get() {
+        return a;
+    }
+
 }

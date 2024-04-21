@@ -14,24 +14,50 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b.lab.eccezioni;
+package di.uniba.map.b.lab.generics;
 
 /**
  *
  * @author pierpaolo
  */
-public class TestException {
+public class Holder2 {
+
+    private Object a;
+
+    /**
+     *
+     * @param a
+     */
+    public Holder2(Object a) {
+        this.a = a;
+    }
+
+    /**
+     *
+     * @param a
+     */
+    public void set(Object a) {
+        this.a = a;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Object get() {
+        return a;
+    }
 
     /**
      *
      * @param args
      */
     public static void main(String[] args) {
-        try {
-            MailParser.checkMail("pippo.m");
-            System.out.println("Indirizzo mail valido");
-        } catch (EmailException ex) {
-            System.err.println("Errore nel controllo dell'indirizzo: " + ex.getMessage());
-        }
+        Holder2 h2 = new Holder2(new Automobile());
+        Automobile a =(Automobile) h2.get();
+        h2.set("Not an Automobile");
+        String s = (String) h2.get();
+        h2.set(1); // Autoboxes to Integer
+        Integer x = (Integer) h2.get();
     }
 }

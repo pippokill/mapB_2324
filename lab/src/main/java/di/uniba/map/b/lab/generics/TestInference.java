@@ -14,24 +14,29 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b.lab.eccezioni;
+package di.uniba.map.b.lab.generics;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author pierpaolo
  */
-public class TestException {
+public class TestInference {
 
     /**
-     *
-     * @param args
+     * @param args the command line arguments
      */
     public static void main(String[] args) {
-        try {
-            MailParser.checkMail("pippo.m");
-            System.out.println("Indirizzo mail valido");
-        } catch (EmailException ex) {
-            System.err.println("Errore nel controllo dell'indirizzo: " + ex.getMessage());
-        }
+        List<String> ls=new ArrayList();
+        ls.add("pippo");
+        Class c=ArrayList.class;
+        System.out.println(c.getName());
+        System.out.println(ls.getClass().getName());
+        List<Integer> ls1=new ArrayList();
+        ls1.add(1);
+        System.out.println(ls1.getClass().getName());
     }
+    
 }
