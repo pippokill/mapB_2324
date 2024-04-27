@@ -10,10 +10,21 @@ package di.uniba.map.b.adventure;
  */
 public interface GameObservable {
     
+    /**
+     *
+     * @param o
+     */
     public void attach(GameObserver o);
     
+    /**
+     *
+     * @param o
+     */
     public void detach(GameObserver o);
     
+    /**
+     *
+     */
     public void notifyObservers();
     
 }

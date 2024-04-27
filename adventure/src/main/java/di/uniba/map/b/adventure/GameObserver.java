@@ -12,6 +12,12 @@ import di.uniba.map.b.adventure.parser.ParserOutput;
  */
 public interface GameObserver {
 
+    /**
+     *
+     * @param description
+     * @param parserOutput
+     * @return
+     */
     public String update(GameDescription description, ParserOutput parserOutput);
 
 }

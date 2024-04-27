@@ -16,6 +16,12 @@ import di.uniba.map.b.adventure.type.CommandType;
  */
 public class UseObserver implements GameObserver {
 
+    /**
+     *
+     * @param description
+     * @param parserOutput
+     * @return
+     */
     @Override
     public String update(GameDescription description, ParserOutput parserOutput) {
         StringBuilder msg = new StringBuilder();

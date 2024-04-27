@@ -27,6 +27,10 @@ public class Engine {
 
     private Parser parser;
 
+    /**
+     *
+     * @param game
+     */
     public Engine(GameDescription game) {
         this.game = game;
         try {
@@ -42,6 +46,9 @@ public class Engine {
         }
     }
 
+    /**
+     *
+     */
     public void execute() {
         System.out.println("================================");
         System.out.println("* Adventure v. 0.4 - 2023-2024 *");

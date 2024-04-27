@@ -15,6 +15,12 @@ import di.uniba.map.b.adventure.GameObserver;
  */
 public class LookAtObserver implements GameObserver {
 
+    /**
+     *
+     * @param description
+     * @param parserOutput
+     * @return
+     */
     @Override
     public String update(GameDescription description, ParserOutput parserOutput) {
         StringBuilder msg = new StringBuilder();

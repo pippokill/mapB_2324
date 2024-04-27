@@ -15,6 +15,12 @@ import di.uniba.map.b.adventure.GameObserver;
  */
 public class MoveObserver implements GameObserver {
 
+    /**
+     *
+     * @param description
+     * @param parserOutput
+     * @return
+     */
     @Override
     public String update(GameDescription description, ParserOutput parserOutput) {
         if (parserOutput.getCommand().getType() == CommandType.NORD) {

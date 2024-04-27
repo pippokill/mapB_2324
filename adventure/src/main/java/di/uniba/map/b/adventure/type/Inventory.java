@@ -16,18 +16,34 @@ public class Inventory {
 
     private List<AdvObject> list = new ArrayList<>();
 
+    /**
+     *
+     * @return
+     */
     public List<AdvObject> getList() {
         return list;
     }
 
+    /**
+     *
+     * @param list
+     */
     public void setList(List<AdvObject> list) {
         this.list = list;
     }
 
+    /**
+     *
+     * @param o
+     */
     public void add(AdvObject o) {
         list.add(o);
     }
 
+    /**
+     *
+     * @param o
+     */
     public void remove(AdvObject o) {
         list.remove(o);
     }

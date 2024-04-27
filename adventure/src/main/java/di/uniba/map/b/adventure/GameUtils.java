@@ -13,6 +13,12 @@ import java.util.List;
  */
 public class GameUtils {
 
+    /**
+     *
+     * @param inventory
+     * @param id
+     * @return
+     */
     public static AdvObject getObjectFromInventory(List<AdvObject> inventory, int id) {
         for (AdvObject o : inventory) {
             if (o.getId() == id) {

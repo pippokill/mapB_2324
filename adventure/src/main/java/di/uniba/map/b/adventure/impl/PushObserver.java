@@ -16,6 +16,12 @@ import di.uniba.map.b.adventure.GameUtils;
  */
 public class PushObserver implements GameObserver {
 
+    /**
+     *
+     * @param description
+     * @param parserOutput
+     * @return
+     */
     @Override
     public String update(GameDescription description, ParserOutput parserOutput) {
         StringBuilder msg = new StringBuilder();

@@ -20,6 +20,12 @@ import java.util.Set;
  */
 public class Utils {
 
+    /**
+     *
+     * @param file
+     * @return
+     * @throws IOException
+     */
     public static Set<String> loadFileListInSet(File file) throws IOException {
         Set<String> set = new HashSet<>();
         BufferedReader reader = new BufferedReader(new FileReader(file));
@@ -30,6 +36,12 @@ public class Utils {
         return set;
     }
 
+    /**
+     *
+     * @param string
+     * @param stopwords
+     * @return
+     */
     public static List<String> parseString(String string, Set<String> stopwords) {
         List<String> tokens = new ArrayList<>();
         String[] split = string.toLowerCase().split("\\s+");

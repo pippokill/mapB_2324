@@ -22,37 +22,72 @@ public class Command {
 
     private Set<String> alias;
 
+    /**
+     *
+     * @param type
+     * @param name
+     */
     public Command(CommandType type, String name) {
         this.type = type;
         this.name = name;
     }
 
+    /**
+     *
+     * @param type
+     * @param name
+     * @param alias
+     */
     public Command(CommandType type, String name, Set<String> alias) {
         this.type = type;
         this.name = name;
         this.alias = alias;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     *
+     * @return
+     */
     public Set<String> getAlias() {
         return alias;
     }
 
+    /**
+     *
+     * @param alias
+     */
     public void setAlias(Set<String> alias) {
         this.alias = alias;
     }
 
+    /**
+     *
+     * @param alias
+     */
     public void setAlias(String[] alias) {
         this.alias = new HashSet<>(Arrays.asList(alias));
     }
 
+    /**
+     *
+     * @return
+     */
     public CommandType getType() {
         return type;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int hashCode() {
         int hash = 3;
@@ -60,6 +95,11 @@ public class Command {
         return hash;
     }
 
+    /**
+     *
+     * @param obj
+     * @return
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

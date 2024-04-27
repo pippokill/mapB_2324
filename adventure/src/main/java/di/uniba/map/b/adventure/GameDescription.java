@@ -27,30 +27,63 @@ public abstract class GameDescription {
 
     private Room currentRoom;
 
+    /**
+     *
+     * @return
+     */
     public List<Room> getRooms() {
         return rooms;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<Command> getCommands() {
         return commands;
     }
 
+    /**
+     *
+     * @return
+     */
     public Room getCurrentRoom() {
         return currentRoom;
     }
 
+    /**
+     *
+     * @param currentRoom
+     */
     public void setCurrentRoom(Room currentRoom) {
         this.currentRoom = currentRoom;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<AdvObject> getInventory() {
         return inventory;
     }
 
+    /**
+     *
+     * @throws Exception
+     */
     public abstract void init() throws Exception;
 
+    /**
+     *
+     * @param p
+     * @param out
+     */
     public abstract void nextMove(ParserOutput p, PrintStream out);
     
+    /**
+     *
+     * @return
+     */
     public abstract String getWelcomeMsg();
 
 }

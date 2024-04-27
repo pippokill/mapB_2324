@@ -40,6 +40,10 @@ public class FireHouseGame extends GameDescription implements GameObservable {
 
     private final List<String> messages = new ArrayList<>();
 
+    /**
+     *
+     * @throws Exception
+     */
     @Override
     public void init() throws Exception {
         messages.clear();
@@ -142,6 +146,11 @@ public class FireHouseGame extends GameDescription implements GameObservable {
         setCurrentRoom(hall);
     }
 
+    /**
+     *
+     * @param p
+     * @param out
+     */
     @Override
     public void nextMove(ParserOutput p, PrintStream out) {
         parserOutput = p;
@@ -167,6 +176,10 @@ public class FireHouseGame extends GameDescription implements GameObservable {
         }
     }
 
+    /**
+     *
+     * @param o
+     */
     @Override
     public void attach(GameObserver o) {
         if (!observer.contains(o)) {
@@ -174,11 +187,18 @@ public class FireHouseGame extends GameDescription implements GameObservable {
         }
     }
 
+    /**
+     *
+     * @param o
+     */
     @Override
     public void detach(GameObserver o) {
         observer.remove(o);
     }
 
+    /**
+     *
+     */
     @Override
     public void notifyObservers() {
         for (GameObserver o : observer) {
@@ -186,6 +206,10 @@ public class FireHouseGame extends GameDescription implements GameObservable {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String getWelcomeMsg() {
         return "Sei appena tornato a casa e non sai cosa fare.\nTi ricordi che non hai ancora utilizzato quel fantastico regalo di tua zia Lina.\n"

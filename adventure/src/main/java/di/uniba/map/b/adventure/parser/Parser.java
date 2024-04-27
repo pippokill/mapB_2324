@@ -19,6 +19,10 @@ public class Parser {
 
     private final Set<String> stopwords;
 
+    /**
+     *
+     * @param stopwords
+     */
     public Parser(Set<String> stopwords) {
         this.stopwords = stopwords;
     }
@@ -45,6 +49,16 @@ public class Parser {
     * frasi semplici del tipo <azione> <oggetto> <oggetto>. Eventuali articoli o preposizioni vengono semplicemente
     * rimossi.
      */
+
+    /**
+     *
+     * @param command
+     * @param commands
+     * @param objects
+     * @param inventory
+     * @return
+     */
+
     public ParserOutput parse(String command, List<Command> commands, List<AdvObject> objects, List<AdvObject> inventory) {
         List<String> tokens = Utils.parseString(command, stopwords);
         if (!tokens.isEmpty()) {
