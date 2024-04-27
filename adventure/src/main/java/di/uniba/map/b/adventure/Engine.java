@@ -69,7 +69,7 @@ public class Engine {
                 game.nextMove(p, System.out);
                 if (game.getCurrentRoom() == null) {
                     System.out.println("La tua avventura termina qui! Complimenti!");
-                    break;
+                    System.exit(0);
                 }
             }
             System.out.print("?> ");
