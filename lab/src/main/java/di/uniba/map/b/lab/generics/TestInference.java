@@ -29,7 +29,7 @@ public class TestInference {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        List<String> ls=new ArrayList();
+        List<String> ls=new ArrayList<>();
         ls.add("pippo");
         Class c=ArrayList.class;
         System.out.println(c.getName());

@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author pierpaolo
  */
-public class TestCanceallazione {
+public class TestCancellazione {
 
     /**
      * @param args the command line arguments

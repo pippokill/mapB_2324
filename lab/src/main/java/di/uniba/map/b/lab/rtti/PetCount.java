@@ -74,7 +74,8 @@ public class PetCount {
             Class.forName("di.uniba.map.b.lab.rtti.Gerbil"),
             Class.forName("di.uniba.map.b.lab.rtti.Hamster")};
         for (int i = 0; i < 15; i++) {
-            pets.add(petTypes[(int) (Math.random() * petTypes.length)].newInstance());
+            int r=(int) (Math.random() * petTypes.length);
+            pets.add(petTypes[r].newInstance());
         }
         Map h = new HashMap();
         for (int i = 0; i < TYPE_NAMES.length; i++) {
