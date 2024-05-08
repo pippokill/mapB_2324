@@ -14,38 +14,37 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b.lab.concorrente;
+package di.uniba.map.b.lab.rete.esercizi;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.LinkedBlockingQueue;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.UUID;
 
 /**
  *
  * @author pierpaolo
  */
-public class TestProduttoreConsumatore {
+public class MessengerServer {
 
     /**
      * @param args the command line arguments
      * @throws java.io.IOException
-     * @throws java.lang.InterruptedException
      */
-    public static void main(String[] args) throws IOException, InterruptedException {
-        BlockingQueue<String> queue = new LinkedBlockingQueue<>(1000);
-        BufferedWriter writer = new BufferedWriter(new FileWriter("./resources/produttore.txt"));
-        Produttore p1 = new Produttore(queue, "P1", 2000);
-        Produttore p2 = new Produttore(queue, "P2", 1000);
-        Consumatore c = new Consumatore(queue, writer);
-        p1.start();
-        p2.start();
-        c.start();
-        p1.join();
-        p2.join();
-        c.join();
-        writer.close();
+    public static void main(String[] args) throws IOException {
+        MessengerData md = new MessengerData();
+        ServerSocket s = new ServerSocket(6666);
+        System.out.println("Started: " + s);
+        try {
+            while (true) {
+                Socket socket = s.accept();
+                //UUID è utilizzato per creare un id univoco da utilizzare come nome del Thread
+                Thread t = new MessengerThread(socket, md, UUID.randomUUID().toString());
+                t.start();
+            }
+        } finally {
+            s.close();
+        }
     }
 
 }

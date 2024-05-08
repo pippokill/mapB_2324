@@ -60,7 +60,7 @@ public class Produttore extends Thread {
                 if ((i + 1) % 100 == 0) {
                     System.out.println("[" + getName() + "] Prodotti: " + i);
                 }
-                sleep(100);
+                sleep(20);
             } catch (InterruptedException ex) {
                 System.err.println("[" + getName() + "] Interrotto durante attesa.");
                 break;
