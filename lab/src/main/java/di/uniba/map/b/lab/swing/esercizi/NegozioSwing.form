@@ -53,7 +53,7 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="menuSearch">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Search"/>
+            <Property name="text" type="java.lang.String" value="Ricerca"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <SubComponents>

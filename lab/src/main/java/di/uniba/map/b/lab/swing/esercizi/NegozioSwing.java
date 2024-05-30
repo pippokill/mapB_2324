@@ -86,7 +86,7 @@ public class NegozioSwing extends javax.swing.JFrame {
 
         jMenuBar1.add(menuInsert);
 
-        menuSearch.setText("Search");
+        menuSearch.setText("Ricerca");
         menuSearch.setEnabled(false);
 
         menuItemCercaArticolo.setText("Cerca articolo...");

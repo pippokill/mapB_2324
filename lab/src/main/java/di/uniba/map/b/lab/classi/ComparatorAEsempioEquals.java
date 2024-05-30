@@ -12,6 +12,12 @@ import java.util.Comparator;
  */
 public class ComparatorAEsempioEquals implements Comparator<EsempioEquals> {
 
+    /**
+     *
+     * @param o1
+     * @param o2
+     * @return
+     */
     @Override
     public int compare(EsempioEquals o1, EsempioEquals o2) {
         return o1.getA().compareTo(o2.getA());

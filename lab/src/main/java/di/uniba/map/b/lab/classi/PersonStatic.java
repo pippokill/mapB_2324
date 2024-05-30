@@ -37,6 +37,10 @@ public class PersonStatic {
         ++numbOfPersons;
     }
     
+    /**
+     *
+     * @return
+     */
     public String toString() {
         return name+" "+surname;
     }
